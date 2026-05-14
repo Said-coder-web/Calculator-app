@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+
+    <!--=== Font Goole ===-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet" />
+
+    <!--=== Style CSS ===-->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Frontend Mentor | Calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 0.6875rem;
+        text-align: center;
+        position: absolute;
+        bottom: 30px;
+        color: var(--text);
+      }
+      .attribution a {
+        color: var(--equal-background);
+        text-decoration: none;
+      }
+
+      .attribution a:hover {
+        color: var(--equal-shadow);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculat">
+      <header>
+        <h1>Calc</h1>
+        <div class="theme-container">
+          <h2>THEME</h2>
+          <div class="levels">
+            <h3><span>1</span><span>2</span><span>3</span></h3>
+            <div class="level-theme">
+              <button class="active"></button>
+              <button></button>
+              <button></button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <output class="result">
+        <span></span>
+        <h4>0</h4>
+      </output>
+
+      <section class="keys">
+        <button>0</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="dot">.</button>
+        <button class="delet">DEL</button>
+        <button class="blus">+</button>
+        <button class="minus">-</button>
+        <button class="multiply">*</button>
+        <button class="division">/</button>
+        <button class="equal">=</button>
+        <button class="reset">RESET</button>
+      </section>
+    </div>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">said-coder-web</a>.
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/14.8.1/math.js"
+      integrity="sha512-AJmFmOXFAAzxbzp498VFGf+/Ke7n/O/Pz7L7R2in/4lEDkqhFvuIemyJo/MzXORunJkrJngeIyaWqLAj2rTY2Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <script src="js/min.js"></script>
+  </body>
+</html>

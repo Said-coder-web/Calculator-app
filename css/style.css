@@ -1,0 +1,396 @@
+/*=== Start Glubal Roule ===*/
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /*=== Theme One ===*/
+  &:has(.calculat .level-theme button:first-of-type.active) {
+    /*### Background ###*/
+
+    --theme: hsl(222, 26%, 31%);
+    --keys: hsl(223, 31%, 20%);
+    --result: hsl(224, 36%, 15%);
+
+    /*### Keys ###*/
+
+    --del-background: hsl(225, 21%, 49%);
+    --del-shadow: hsl(224, 28%, 35%);
+
+    --equal-background: hsl(6, 63%, 50%);
+    --equal-shadow: hsl(6, 70%, 34%);
+
+    --key-background: hsl(0, 0%, 90%);
+    --key-shadow: hsl(28, 16%, 65%);
+
+    /*### Text ###*/
+
+    --color-button: hsl(221, 14%, 31%);
+    --color-text: hsl(0, 100%, 100%);
+    --text: hsl(0, 100%, 100%);
+  }
+
+  /*=== Theme Two ===*/
+  &:has(.calculat .level-theme button:nth-of-type(2).active) {
+    /*### Backgrounds ###*/
+
+    --theme: hsl(0, 0%, 90%);
+    --keys: hsl(0, 5%, 81%);
+    --result: hsl(0, 0%, 93%);
+
+    /*### Keys ###*/
+
+    --del-background: hsl(185, 42%, 37%);
+    --del-shadow: hsl(185, 58%, 25%);
+
+    --equal-background: hsl(25, 98%, 40%);
+    --equal-shadow: hsl(25, 99%, 27%);
+
+    --key-background: hsl(0, 0%, 90%);
+    --key-shadow: hsl(35, 11%, 61%);
+
+    /*### Text ###*/
+
+    --color-button: hsl(60, 10%, 19%);
+    --color-text: hsl(0, 100%, 100%);
+    --text: hsl(60, 10%, 19%);
+  }
+
+  /*=== Theme Three ===*/
+  &:has(.calculat .level-theme button:last-of-type.active) {
+    /*### Backgrounds ###*/
+
+    --theme: hsl(268, 75%, 9%);
+    --keys: hsl(268, 71%, 12%);
+    --result: hsl(268, 71%, 12%);
+
+    /*### Keys ###*/
+
+    --del-background: hsl(281, 89%, 26%);
+    --del-shadow: hsl(285, 91%, 52%);
+
+    --equal-background: hsl(176, 100%, 44%);
+    --equal-shadow: hsl(177, 92%, 70%);
+
+    --key-background: hsl(268, 47%, 21%);
+    --key-shadow: hsl(290, 70%, 36%);
+
+    /*### Text ###*/
+
+    --color-button: hsl(52, 100%, 62%);
+    --color-text: hsl(0, 100%, 100%);
+    --text: hsl(52, 100%, 62%);
+  }
+
+  background: var(--theme);
+  font-family: "League Spartan", sans-serif;
+  min-height: 100vh;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--theme);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--equal-background);
+  border-radius: 5px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--equal-shadow);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+/*=== End Glubal Roule ===*/
+
+/*=== Start Project ===*/
+.calculat {
+  width: 500px;
+  display: grid;
+  gap: 20px;
+  padding: 20px 15px 10px;
+  border: 1px solid var(--text);
+  border-radius: 20px;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      color: var(--text);
+      font-size: 1.5rem;
+    }
+
+    .theme-container {
+      display: flex;
+      gap: 20px;
+      align-items: flex-end;
+      color: var(--text);
+
+      h2 {
+        font-size: 1rem;
+      }
+
+      .levels {
+        width: 65px;
+
+        h3 {
+          padding-inline: 10px;
+          display: flex;
+          justify-content: space-between;
+          font-size: 0.75rem;
+          margin-bottom: 5px;
+        }
+
+        .level-theme {
+          padding: 5px;
+          width: 100%;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: var(--result);
+          border-radius: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          -ms-border-radius: 10px;
+          -o-border-radius: 10px;
+
+          button {
+            height: 15px;
+            width: 15px;
+            background: var(--theme);
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            transition: 0.3s;
+            -webkit-transition: 0.3s;
+            -moz-transition: 0.3s;
+            -ms-transition: 0.3s;
+            -o-transition: 0.3s;
+
+            &:hover {
+              background: var(--equal-shadow);
+              opacity: 0.6;
+            }
+            &.active {
+              background: var(--equal-background);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .result {
+    padding: 20px;
+    width: 100%;
+    height: 120px;
+    background: var(--result);
+    color: var(--text);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    position: relative;
+    overflow: auto;
+
+    span {
+      position: absolute;
+      top: 15px;
+      opacity: 0.5;
+    }
+
+    h4 {
+      text-align: end;
+      width: 100%;
+      font-size: 3rem;
+      overflow-x: auto;
+    }
+  }
+
+  .keys {
+    padding: 20px;
+    background: var(--keys);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 20px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+
+    button {
+      font-size: 3rem;
+      font-weight: bold;
+      color: var(--color-button);
+      background: var(--key-background);
+      box-shadow: 0 5px 0 0 var(--key-shadow);
+      border-radius: 8px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+      transition: 0.3s;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      -ms-transition: 0.3s;
+      -o-transition: 0.3s;
+
+      &:focus,
+      &:hover {
+        box-shadow: 0 2px 0 0 var(--key-shadow);
+        transform: translateY(3px);
+        -webkit-transform: translateY(3px);
+        -moz-transform: translateY(3px);
+        -ms-transform: translateY(3px);
+        -o-transform: translateY(3px);
+      }
+
+      &:nth-of-type(2),
+      &:nth-of-type(5),
+      &:nth-of-type(8) {
+        grid-column: 1;
+      }
+      &:nth-of-type(2) {
+        grid-row: 3;
+      }
+      &:nth-of-type(5) {
+        grid-row: 2;
+      }
+      &:nth-of-type(8) {
+        grid-row: 1;
+      }
+
+      &:first-of-type,
+      &:nth-of-type(3),
+      &:nth-of-type(6),
+      &:nth-of-type(9) {
+        grid-column: 2;
+      }
+      &:first-of-type {
+        grid-row: 4;
+      }
+      &:nth-of-type(3) {
+        grid-row: 3;
+      }
+      &:nth-of-type(6) {
+        grid-row: 2;
+      }
+      &:nth-of-type(9) {
+        grid-row: 1;
+      }
+
+      &:nth-of-type(4),
+      &:nth-of-type(7),
+      &:last-of-type {
+        grid-column: 3;
+      }
+      &:nth-of-type(4) {
+        grid-row: 3;
+      }
+      &:nth-of-type(7) {
+        grid-row: 2;
+      }
+      &:last-of-type {
+        grid-row: 1;
+      }
+
+      &.reset,
+      &.delet {
+        font-size: 1.5rem;
+        color: var(--color-text);
+        background: var(--del-background);
+        box-shadow: 0 5px 0 0 var(--del-shadow);
+
+        &:focus,
+        &:hover {
+          box-shadow: 0 2px 0 0 var(--del-shadow);
+          transform: translateY(3px);
+          -webkit-transform: translateY(3px);
+          -moz-transform: translateY(3px);
+          -ms-transform: translateY(3px);
+          -o-transform: translateY(3px);
+        }
+      }
+
+      &.reset {
+        grid-column: 1 / span 2;
+        grid-row: 5;
+      }
+      &.equal {
+        grid-column: 3 / span 2;
+        grid-row: 5;
+        background: var(--equal-background);
+        box-shadow: 0 5px 0 0 var(--equal-shadow);
+        color: var(--color-text);
+
+        &:focus,
+        &:hover {
+          box-shadow: 0 2px 0 0 var(--equal-shadow);
+          transform: translateY(3px);
+          -webkit-transform: translateY(3px);
+          -moz-transform: translateY(3px);
+          -ms-transform: translateY(3px);
+          -o-transform: translateY(3px);
+        }
+      }
+      &.delet {
+        grid-column: 4;
+        grid-row: 1;
+      }
+      &.blus {
+        grid-column: 4;
+        grid-row: 2;
+      }
+      &.minus {
+        grid-column: 4;
+        grid-row: 3;
+      }
+      &.multiply {
+        grid-column: 4;
+        grid-row: 4;
+      }
+      &.division {
+        grid-column: 3;
+        grid-row: 4;
+      }
+      &.dot {
+        grid-column: 1;
+        grid-row: 4;
+      }
+    }
+  }
+}
+/*=== End Project ===*/
