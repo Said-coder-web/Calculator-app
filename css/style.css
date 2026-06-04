@@ -252,6 +252,7 @@ button {
     -o-border-radius: 15px;
 
     button {
+      padding: 10px;
       font-size: 3rem;
       font-weight: bold;
       color: var(--color-button);
